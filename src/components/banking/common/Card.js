@@ -60,22 +60,22 @@ function Card({ balance, provider, loading}) {
             { !loading && (
                 <>
                     <CardTop>
-                        <AccountBalance>
+                        <AccountBalance data-testid="account-balance">
                             <FormattedCurrency
                                 currency={ balance?.currency_iso }
                                 value={ balance?.amount }
                             />
                         </AccountBalance>
 
-                        <Provider>{ provider.title }</Provider>
+                        <Provider data-testid="account-provider">{ provider.title }</Provider>
                     </CardTop>
 
                     <CardNumber>1234 &middot;&middot;&middot;&middot; &middot;&middot;&middot;&middot; &middot;&middot;&middot;&middot;</CardNumber>
 
                     <CardBottom>
-                        <SortCode>{ provider.sort_code }</SortCode>
+                        <SortCode data-testid="account-sort-code">{ provider.sort_code }</SortCode>
 
-                        <AccountType>{ provider.description }</AccountType>
+                        <AccountType data-testid="account-type">{ provider.description }</AccountType>
                     </CardBottom>
                 </>
             ) }
